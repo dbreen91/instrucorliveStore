@@ -1,0 +1,15 @@
+<section class="row">
+	<h2 class="section-heading">New Recommendations</h2>
+	<product-box ng-repeat="product in store.recommendedProducts" product-data="product" selected-currency="main.selectedCurrency" />
+</product-box>
+</section>
+<section class="row">
+	<h2 class="section-heading">Popular</h2>
+	<product-box ng-repeat="product in store.popularProducts" product-data="product" selected-currency="main.selectedCurrency" />
+</product-box>
+
+</section>
+<section class="row">
+	<h2 class="section-heading">In Stock</h2>
+	<product-box ng-repeat="product in store.untaggedProducts" product-data="product" selected-currency="main.selectedCurrency" />
+</section>

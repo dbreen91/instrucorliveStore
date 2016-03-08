@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>InstructorLive Store</title>
+
+	<!-- load bootstrap from CDN and custom CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/css/style.css"> 
+	<!-- JS -->
+	<!-- load angular and angular-route via CDN -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-route.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-animate.js"></script>
+
+	<!-- controllers -->
+	<script src="app/controllers/mainCtrl.js"></script>
+	<script src="app/controllers/storeCtrl.js"></script>
+
+	<!-- services -->
+	<script src="app/services/utilitiesService.js"></script>
+	<script src="app/services/currencySelectorService.js"></script>
+	<script src="app/services/productsService.js"></script>
+	
+	<!-- directives -->
+	<script src="app/directives/productDirective.js"></script>
+
+	<!-- main -->
+	<script src="app/app.js"></script>
+	<script src="app/app.routes.js"></script>
+</head>
+<body ng-app="instructorLive" ng-controller="mainController as main">
+
+	<div class="container-fluid">
+		<header class="header row">
+			<select class="header_currency-select" ng-options="option.name for option in main.currencyOptions" ng-model="main.selectedCurrency">
+			</select>
+			<img class="header__logo center-block" src="assets/img/site/logo.jpg" alt="">
+			<button class="header__menu-button">
+				<i class="fa fa-bars"></i>
+			</button>
+		</header>
+
+		<main class="container">
+			<!-- ANGULAR VIEWS -->
+			<div ng-view>
+
+			</div>
+		</main>
+
+
+	</div>
+
+</body>
+</html>
