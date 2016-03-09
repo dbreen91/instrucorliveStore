@@ -1,5 +1,5 @@
 angular.module('productsService', [])
-	.factory('Products', function(ProductJson, CurrencySelector, Utilities){
+	.factory('Products', function(ProductJson, Utilities){
 
 		var productsFactory = {}, 
 		products = ProductJson.data,
